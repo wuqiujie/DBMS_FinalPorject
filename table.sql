@@ -31,7 +31,7 @@ CREATE TABLE environment(
 
 CREATE TABLE aircraft_condition(
 	aircraft_code VARCHAR PRIMARY KEY NOT NULL, -- REFERENCES aircraft(aircraft_code)
-	coordinates FLOAT NOT NULL,
+	coordinates POINT NOT NULL,
 	flight_attitude INTEGER NOT NULL,
 	flight_direction VARCHAR NOT NULL,
 	oil_remaining INTEGER NOT NULL,
