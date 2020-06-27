@@ -30,13 +30,14 @@ CREATE TABLE environment(
 );
 
 CREATE TABLE aircraft_condition(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL, -- REFERENCES aircraft(aircraft_code)
+	aircraft_code VARCHAR NOT NULL, -- REFERENCES aircraft(aircraft_code)
 	longtitude FLOAT NOT NULL,
 	latitude FLOAT NOT NULL,
+	CONSTRAINT condition_key PRIMARY KEY (aircraft_code,longtitude,latitude),
 	flight_attitude INTEGER NOT NULL,
 	flight_direction FLOAT NOT NULL,
 	oil_remaining INTEGER NOT NULL,
-	time_flown INTEGER NOT NULL,
+	time_flown TIME NOT NULL,
 	mile_flown INTEGER NOT NULL,
 	if_breakdown BOOLEAN NOT NULL,
 	if_off_course BOOLEAN NOT NULL,
