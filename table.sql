@@ -21,12 +21,13 @@ CREATE TABLE airport(
 );
 
 CREATE TABLE environment(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL, -- REFERENCES aircraft(aircraft_code)
-	weather VARCHAR NOT NULL,
-	landform VARCHAR NOT NULL,
+	aircraft_code VARCHAR NULL, -- REFERENCES aircraft(aircraft_code)
 	humidity INTEGER NOT NULL,
+	landform VARCHAR NOT NULL,
+	weather VARCHAR NOT NULL,
 	wind_scale INTEGER NOT NULL,
-	wind_direction VARCHAR NOT NULL
+	wind_direction VARCHAR NOT NULL,
+	CONSTRAINT environment_key PRIMARY KEY (aircraft_code,humidity,landform,weather,wind_scale,wind_direction)
 );
 
 CREATE TABLE aircraft_condition(
