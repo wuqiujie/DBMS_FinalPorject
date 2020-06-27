@@ -1,5 +1,5 @@
 CREATE TABLE aircraft(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL,
+	aircraft_code VARCHAR NOT NULL,
 	company VARCHAR NOT NULL,
 	aircraft_type VARCHAR NOT NULL, -- REFERENCES aircraft_performance(aircraft_type)
 	departure_airport VARCHAR NOT NULL,
@@ -8,16 +8,17 @@ CREATE TABLE aircraft(
 	departure_time timestamp NOT NULL,
 	arrival_time timestamp NOT NULL,
 	flight_weight INTEGER NOT NULL,
-	CONSTRAINT flights_check CHECK ((arrival_time > departure_time))
+	CONSTRAINT aircraft_key PRIMARY KEY (aircraft_code,departure_time,arrival_airport)
 );
 
 CREATE TABLE airport(
-	name VARCHAR PRIMARY KEY NOT NULL,
+	name VARCHAR NOT NULL,
 	aircraft_code VARCHAR NOT NULL, -- REFERENCES aircraft(aircraft_code)
 	situation VARCHAR NOT NULL,
 	runway INTEGER NOT NULL,
 	sequence INTEGER NOT NULL,
-	wait_time INTEGER NOT NULL
+	wait_time INTEGER NOT NULL,
+	CONSTRAINT airport_key PRIMARY KEY (name,aircraft_code,sequence)
 );
 
 CREATE TABLE environment(
