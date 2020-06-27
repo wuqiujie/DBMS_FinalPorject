@@ -34,7 +34,7 @@ CREATE TABLE aircraft_condition(
 	longtitude FLOAT NOT NULL,
 	latitude FLOAT NOT NULL,
 	flight_attitude INTEGER NOT NULL,
-	flight_direction VARCHAR NOT NULL,
+	flight_direction  NOT NULL,
 	oil_remaining INTEGER NOT NULL,
 	time_flown INTEGER NOT NULL,
 	mile_flown INTEGER NOT NULL,
