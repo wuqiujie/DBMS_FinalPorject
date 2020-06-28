@@ -18,22 +18,17 @@
 		<title>Login</title>
 
 		<!-- 公共样式 开始 -->
-		<link rel="stylesheet" type="text/css" href="../css/base.css">
-		<link rel="stylesheet" type="text/css" href="../css/iconfont.css">
-		<script type="text/javascript" src="../framework/jquery-1.11.3.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
-		<script type="text/javascript" src="../layui/layui.js"></script>
-		<!-- 滚动条插件 -->
-		<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css">
-		<script src="../framework/jquery-ui-1.10.4.min.js"></script>
-		<script src="../framework/jquery.mousewheel.min.js"></script>
-		<script src="../framework/jquery.mCustomScrollbar.min.js"></script>
-		<script src="../framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<link rel="shortcut icon" href="../static/images/favicon.ico"/>
+		<link rel="bookmark" href="../static/images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/base.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/iconfont.css">
+		<script type="text/javascript" src="../static/framework/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css">
+		<script type="text/javascript" src="../static/layui/layui.js"></script>
 		<!-- 公共样式 结束 -->
-
 		
-		<link rel="stylesheet" type="text/css" href="../css/login1.css">
-		<script type="text/javascript" src="../js/login1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/login1.css">
+		<script type="text/javascript" src="../static/js/login1.js"></script>
 	</head>
 
 	<body>
@@ -41,7 +36,7 @@
 		<div class="login_main">
 			<div class="box">
 				<div class="left">
-					<img src="../images/logo.png" />
+					<img src="../static/images/logo.png" />
 					<p>取名無能出品</p>
 
 				</div>
@@ -51,22 +46,22 @@
 						<div class="layui-form-item">
 							<label class="layui-form-label login_title"><i class="iconfont icon-gerenzhongxin-denglu"></i></label>
 							<div class="layui-input-block login_input">
-								<input type="text" name="name" required lay-verify="required" autocomplete="off" placeholder="請輸入您的用戶名" class="layui-input">
+								<input type="text" name="用戶名"  autocomplete="off" placeholder="請輸入您的用戶名" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item">
 							<label class="layui-form-label login_title"><i class="iconfont icon-mima1"></i></label>
 							<div class="layui-input-block login_input">
-								<input type="password" name="password"  autocomplete="off" placeholder="請輸入密碼" class="layui-input">
+								<input type="password" name="密碼"  autocomplete="off" placeholder="請輸入密碼" class="layui-input">
 							</div>
 						</div>
 						<div class="layui-form-item">
 							<button class="layui-btn layui-btn-fluid login_but" lay-submit lay-filter="loginBut">Log In</button>
 						</div>
 						<div class="layui-form-item">
-							<input type="radio" name="sex" value="機組" title="機組" checked lay-filter="userType">
-							<input type="radio" name="sex" value="地面" title="地面" lay-filter="userType">
-							<input type="radio" name="sex" value="管理" title="管理" lay-filter="userType">
+							<input type="radio" name="類別" value="機組" title="機組" checked lay-filter="userType">
+							<input type="radio" name="類別" value="地面" title="地面" lay-filter="userType">
+							<input type="radio" name="類別" value="管理" title="管理" lay-filter="userType">
 						</div>
 					</form>
 				</div>
@@ -88,15 +83,15 @@
 				
 				form.on('radio(userType)', function(data){
 					if(data.value == "機組"){
-						$(".loginBg").css("background","url('../images/login_admin_bg.jpg')");
+						$(".loginBg").css("background","url('../static/images/login_admin_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#57c201 !important");
 					}
 					if(data.value == "地面"){
-						$(".loginBg").css("background","url('../images/login_sh_bg.jpg')");
+						$(".loginBg").css("background","url('../static/images/login_sh_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#16c6f9 !important");
 					}
 					if(data.value == "管理"){
-						$(".loginBg").css("background","url('../images/login_fj_bg.jpg')");
+						$(".loginBg").css("background","url('../static/images/login_fj_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#ffd205 !important");
 					}
 				});

@@ -18,29 +18,64 @@
 		<title>後台</title>
 
 		<!-- 公共样式 开始 -->
-		<link rel="stylesheet" type="text/css" href="../css/base.css">
-		<link rel="stylesheet" type="text/css" href="../css/iconfont.css">
-		<script type="text/javascript" src="../framework/jquery-1.11.3.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
-		<script type="text/javascript" src="../layui/layui.js"></script>
+		<link rel="shortcut icon" href="../static/images/favicon.ico"/>
+		<link rel="bookmark" href="../static/images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/base.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/iconfont.css">
+		<script type="text/javascript" src="../static/framework/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css">  
+		<script type="text/javascript" src="../static/layui/layui.js"></script>
 		<!-- 滚动条插件 -->
-		<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css">
-		<script src="../framework/jquery-ui-1.10.4.min.js"></script>
-		<script src="../framework/jquery.mousewheel.min.js"></script>
-		<script src="../framework/jquery.mCustomScrollbar.min.js"></script>
-		<script src="../framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<link rel="stylesheet" type="text/css" href="../static/css/jquery.mCustomScrollbar.css">
+		<script src="../static/framework/jquery-ui-1.10.4.min.js"></script>
+		<script src="../static/framework/jquery.mousewheel.min.js"></script>
+		<script src="../static/framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="../static/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
 		<!-- 公共样式 结束 -->
 		
-		<style>
-			.layui-form{
-				margin-right: 30%;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
+		<script type="text/javascript" src="../static/framework/frame.js" ></script>
+		
 
 	</head>
 
 	<body>
-		<div class="cBody">
+
+      <!-- 左侧菜单 - 开始 -->
+		<div class="frameMenu">
+		    <div class="logo">
+		        <img src="../static/images/logo.png"/>
+		        <div class="logoText">
+		            <h1>飛機調度系統</h1>
+		            <p>取名無能出品</p>
+		        </div>
+		    </div>
+		</div>
+		<!-- 左侧菜单 - 结束 -->
+
+
+
+
+	<div class="main">
+			<!-- 头部栏 - 开始 -->
+			<div class="frameTop">
+				<img class="jt" src="../images/top_jt.png"/>
+				<div class="topMenu">
+					<ul>
+						<li>
+							<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>Back</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<!-- 头部栏 - 结束 -->
+			
+
+
+
+		<div class="frameMain">
 			<form id="addForm" class="layui-form" action="">
 				
 				<div class="layui-form-item">
@@ -145,6 +180,7 @@
 			
 			
 
+		</div>
 		</div>
 	</body>
 

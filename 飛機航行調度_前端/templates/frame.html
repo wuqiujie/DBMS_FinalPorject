@@ -19,21 +19,23 @@
 
 
 		<!-- 公共样式 开始 -->
-		<link rel="stylesheet" type="text/css" href="../css/base.css">
-		<link rel="stylesheet" type="text/css" href="../css/iconfont.css">
-		<script type="text/javascript" src="../framework/jquery-1.11.3.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
-		<script type="text/javascript" src="../layui/layui.js"></script>
+		<link rel="shortcut icon" href="../static/images/favicon.ico"/>
+		<link rel="bookmark" href="../static/images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/base.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/iconfont.css">
+		<script type="text/javascript" src="../static/framework/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css">  
+		<script type="text/javascript" src="../static/layui/layui.js"></script>
 		<!-- 滚动条插件 -->
-		<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css">
-		<script src="../framework/jquery-ui-1.10.4.min.js"></script>
-		<script src="../framework/jquery.mousewheel.min.js"></script>
-		<script src="../framework/jquery.mCustomScrollbar.min.js"></script>
-		<script src="../framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<link rel="stylesheet" type="text/css" href="../static/css/jquery.mCustomScrollbar.css">
+		<script src="../static/framework/jquery-ui-1.10.4.min.js"></script>
+		<script src="../static/framework/jquery.mousewheel.min.js"></script>
+		<script src="../static/framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="../static/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
 		<!-- 公共样式 结束 -->
 		
-		<link rel="stylesheet" type="text/css" href="../css/frameStyle.css">
-		<script type="text/javascript" src="../framework/frame.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
+		<script type="text/javascript" src="../static/framework/frame.js" ></script>
 		
 	</head>
 
@@ -41,7 +43,7 @@
 		<!-- 左侧菜单 - 开始 -->
 		<div class="frameMenu">
 		    <div class="logo">
-		        <img src="../images/logo.png"/>
+		        <img src="../static/images/logo.png"/>
 		        <div class="logoText">
 		            <h1>飛機調度系統</h1>
 		            <p>取名無能出品</p>
@@ -50,51 +52,30 @@
 		    <div class="menu">
 		        <ul>
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-biaodanwancheng left"></i>航班信息<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('1_add.html',this)">添加航班</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('1_update.html',this)">修改/刪除航班</a></dt>
-		                </dl>
+		                 <a href="1_add.html"><i class="iconfont icon-biaodanwancheng left"></i>航班信息</a>
 		            </li>
 
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-huojian left"></i>飛機性能<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('2_add.html',this)">添加飛機</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('2_update.html',this)">修改/刪除飛機</a></dt>
-		                </dl>
+		                <a href="2_add.html"><i class="iconfont icon-huojian left"></i>飛機性能</a>
+		               
 		            </li>
 
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yunying left"></i>機場信息<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('3_add.html',this)">添加機場</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('3_update.html',this)">修改/刪除機場</a></dt>
-		                </dl>
+		                <a href="3_add.html"><i class="iconfont icon-yunying left"></i>機場信息</a>
 		           	</li>
 
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-peisong2 left"></i>周圍環境<i class="iconfont icon-dajiantouyou right"></i></a>
-		                 <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('4_add.html',this)">添加周圍環境</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('4_update.html',this)">修改/刪除周圍環境</a></dt>
-		                </dl>
+		                 <a href="4_add.html"><i class="iconfont icon-peisong2 left"></i>周圍環境</a>
 		           	</li>
 
 		        	<li>
-						<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yingyongzhongxin left"></i>飛機當前狀況<i class="iconfont icon-dajiantouyou right"></i></a>
-
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('5_add.html',this)">添加飛機當前狀況</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('5_update.html',this)">修改/刪除飛機當前狀況</a></dt>
-		                </dl>
+		                <a href="5_add.html"><i class="iconfont icon-yingyongzhongxin left"></i>飛機當前狀況</a>
+		         
 		           	</li>
 
 
 		           	<li>
-		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('serach.html',this)" >
-							<i class="iconfont icon-survey left"></i>搜索
-		         		</a>
+		         		<a href="search.html"><i class="iconfont icon-survey left"></i>搜索</a>
 		           	</li>
 
 
@@ -106,7 +87,7 @@
 		<div class="main">
 			<!-- 头部栏 - 开始 -->
 			<div class="frameTop">
-				<img class="jt" src="images/top_jt.png"/>
+				<img class="jt" src="../static/images/top_jt.png"/>
 				<div class="topMenu">
 					<ul>
 						<li><a href="login1.html"><i class="iconfont icon-084tuichu"></i>Logout</a></li>
