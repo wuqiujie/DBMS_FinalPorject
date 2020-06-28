@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		<!-- Google Chrome Frame也可以让IE用上Chrome的引擎: -->
+		<meta name="renderer" content="webkit">
+		<!--国产浏览器高速模式-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="取名無能" />
+		<!-- 作者 -->
+		<meta name="revised" content="取名無能.v1, 2020/06/01" />
+		<!-- 定义页面的最新版本 -->
+		<meta name="description" content="网站简介" />
+		<!-- 网站简介 -->
+		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
+		<title>後台</title>
+
+		<!-- 公共样式 开始 -->
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+		<script type="text/javascript" src="../framework/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+		<script type="text/javascript" src="../layui/layui.js"></script>
+		<!-- 滚动条插件 -->
+		<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css">
+		<script src="../framework/jquery-ui-1.10.4.min.js"></script>
+		<script src="../framework/jquery.mousewheel.min.js"></script>
+		<script src="../framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="../framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<!-- 公共样式 结束 -->
+		
+		<style>
+			.layui-form{
+				margin-right: 30%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="cBody">
+			<form id="addForm" class="layui-form" action="">
+				
+				
+
+				
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">航班號</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"   placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">溫度</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  placeholder="30℃"  autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">地形</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  placeholder="山地" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">濕度</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  placeholder="50%" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">風級</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  placeholder="4級" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">風向</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  placeholder="東南45度" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">備註</label>
+					<div class="layui-input-block">
+						<textarea name="desc" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				
+
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="submitBut">Submit</button>
+						<button type="reset" class="layui-btn layui-btn-primary">Reset</button>
+					</div>
+				</div>
+			</form>
+			
+			
+
+		</div>
+	</body>
+
+</html>
