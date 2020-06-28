@@ -1,5 +1,5 @@
 CREATE TABLE aircraft(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL,
+	aircraft_code VARCHAR NOT NULL,
 	company VARCHAR NOT NULL,
 	aircraft_type VARCHAR NOT NULL, -- REFERENCES aircraft_performance(aircraft_type)
 	departure_airport VARCHAR NOT NULL,
@@ -8,35 +8,38 @@ CREATE TABLE aircraft(
 	departure_time timestamp NOT NULL,
 	arrival_time timestamp NOT NULL,
 	flight_weight INTEGER NOT NULL,
-	CONSTRAINT flights_check CHECK ((arrival_time > departure_time))
+	CONSTRAINT aircraft_key PRIMARY KEY (aircraft_code,departure_time,arrival_airport)
 );
 
 CREATE TABLE airport(
-	name VARCHAR PRIMARY KEY NOT NULL,
+	name VARCHAR NOT NULL,
 	aircraft_code VARCHAR NOT NULL, -- REFERENCES aircraft(aircraft_code)
 	situation VARCHAR NOT NULL,
 	runway INTEGER NOT NULL,
 	sequence INTEGER NOT NULL,
-	wait_time INTEGER NOT NULL
+	wait_time INTEGER NOT NULL,
+	CONSTRAINT airport_key PRIMARY KEY (name,aircraft_code,sequence)
 );
 
 CREATE TABLE environment(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL, -- REFERENCES aircraft(aircraft_code)
-	weather VARCHAR NOT NULL,
-	landform VARCHAR NOT NULL,
+	aircraft_code VARCHAR NULL, -- REFERENCES aircraft(aircraft_code)
 	humidity INTEGER NOT NULL,
+	landform VARCHAR NOT NULL,
+	weather VARCHAR NOT NULL,
 	wind_scale INTEGER NOT NULL,
-	wind_direction VARCHAR NOT NULL
+	wind_direction VARCHAR NOT NULL,
+	CONSTRAINT environment_key PRIMARY KEY (aircraft_code,humidity,landform,weather,wind_scale,wind_direction)
 );
 
 CREATE TABLE aircraft_condition(
-	aircraft_code VARCHAR PRIMARY KEY NOT NULL, -- REFERENCES aircraft(aircraft_code)
+	aircraft_code VARCHAR NOT NULL, -- REFERENCES aircraft(aircraft_code)
 	longtitude FLOAT NOT NULL,
 	latitude FLOAT NOT NULL,
+	CONSTRAINT condition_key PRIMARY KEY (aircraft_code,longtitude,latitude),
 	flight_attitude INTEGER NOT NULL,
 	flight_direction FLOAT NOT NULL,
 	oil_remaining INTEGER NOT NULL,
-	time_flown INTEGER NOT NULL,
+	time_flown TIME NOT NULL,
 	mile_flown INTEGER NOT NULL,
 	if_breakdown BOOLEAN NOT NULL,
 	if_off_course BOOLEAN NOT NULL,
