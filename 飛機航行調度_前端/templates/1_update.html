@@ -55,7 +55,7 @@
 		 <form action='/updateaction/' method="post">
            <table class="layui-table">
            
-         
+         {% for i in userlist %}
 
             	 <div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
@@ -130,7 +130,7 @@
 				</div>
 
           
-
+			{% endfor %}
             <tr>
                 <td colspan="2" align="center"><input type="Submit" ,value="Submit"></td>
             </tr>

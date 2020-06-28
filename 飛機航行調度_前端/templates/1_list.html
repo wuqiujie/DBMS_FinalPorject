@@ -75,20 +75,21 @@
 
 		<div class="frameMain">
 			<div class="console">
-				<form class="layui-form" action="" method="post">
+
+				<form class="layui-form" action="/search" method="post">
 					<div class="layui-form-item">
 						<div class="layui-input-inline">
-							<input type="text" name="航班號" required lay-verify="required" placeholder="航班號" autocomplete="off" class="layui-input">
+							<input type="text" name="aircraft_code" required lay-verify="required" placeholder="航班號" autocomplete="off" class="layui-input">
 						</div>
 						<div class="layui-input-inline">
-							<input type="text" name="出發地"  placeholder="出發地" autocomplete="off" class="layui-input">
+							<input type="text" name="departure_airport"  placeholder="出發地" autocomplete="off" class="layui-input">
 						</div>
 
 						<div class="layui-input-inline">
-							<input type="text" name="目的地"  placeholder="目的地" autocomplete="off" class="layui-input">
+							<input type="text" name="arrival_airport"  placeholder="目的地" autocomplete="off" class="layui-input">
 						</div>
 
-						<button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+						<button class="layui-btn" lay-submit lay-filter="formDemo" type="submit" class="search-submit">搜索</button>
 					</div>
 				</form>
 
@@ -121,24 +122,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+					{% for i in userlist %}
 					<tr>
-						<td>{{ aircraft_code }}</td>
-						<td>{{ company }}</td>
-						<td>{{ aircraft_type }}</td>
-						<td>{{ departure_airport }}</td>
-						<td>{{ arrival_airport }}</td>
-						<td>{{ stopover_airport }}</td>
-						<td>{{ departure_time }}</td>
-						<td>{{ arrival_time }}</td>
-						<td>{{ flight_weight }}</td>
+						<td>{{ i.aircraft_code }}</td>
+						<td>{{ i.company }}</td>
+						<td>{{ i.aircraft_type }}</td>
+						<td>{{ i.departure_airport }}</td>
+						<td>{{ i.arrival_airport }}</td>
+						<td>{{ i.stopover_airport }}</td>
+						<td>{{ i.departure_time }}</td>
+						<td>{{ i.arrival_time }}</td>
+						<td>{{ i.flight_weight }}</td>
 						<td>
 							<button class="layui-btn layui-btn-xs" onclick="updateList()">修改</button>
-							<button class="layui-btn layui-btn-xs" onclick="delList(this)">删除</button>
+							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/del?id={{ i.aircraft_code }}">删除</button>
 
 						</td>
 					</tr>
-
+				{% endfor %}
 
 				</tbody>
 			</table>
@@ -173,7 +174,7 @@
 						updateFrame = layer.open({
                     		title: "修改",
 							type: 2,
-							area: ['70%', '60%'],
+							area: ['70%', '80%'],
 							scrollbar: true,	
 							maxmin: true,
 							content: '1_update.html'
@@ -199,6 +200,10 @@
 						});
 					});
 				});
+
+
+
+
 			}
 
 
