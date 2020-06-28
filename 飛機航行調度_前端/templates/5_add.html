@@ -81,54 +81,67 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"   placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
+						<input type="text"  name="aircraft_code" placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">經緯度</label>
+					<label class="layui-form-label">經度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="25N,121E" autocomplete="off" class="layui-input">
+						<input type="text" name="longtitude" placeholder="25" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
 
-
 				<div class="layui-form-item">
-					<label class="layui-form-label">剩餘油量</label>
+					<label class="layui-form-label">緯度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="1L" autocomplete="off" class="layui-input">
+						<input type="text" name="latitude" placeholder="121" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
+
 				<div class="layui-form-item">
-					<label class="layui-form-label">已飛行時間</label>
+					<label class="layui-form-label">飛行高度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="1h30min" autocomplete="off" class="layui-input">
+						<input type="text" name="flight_attitude" placeholder="22000" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 				
 
+				
+
 				<div class="layui-form-item">
-					<label class="layui-form-label">已飛行距離</label>
+					<label class="layui-form-label">剩餘油量</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="00:00" autocomplete="off" class="layui-input">
+						<input type="text" name="oil_remaining" placeholder="13" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
+
 				<div class="layui-form-item">
-					<label class="layui-form-label">已飛行里程</label>
+					<label class="layui-form-label">時間</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="150km" autocomplete="off" class="layui-input">
+						<input type="text" name="time_flown" placeholder="19:44" autocomplete="off" class="layui-input">
 					</div>
 				</div>
+
+
+			    <div class="layui-form-item">
+					<label class="layui-form-label">里程</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="mile_flown" placeholder="28000" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">故障</label>
 					<div class="layui-input-block">
-						<input type="radio" name="故障"  title="否" checked>
-						<input type="radio" name="故障"  title="是">
+						<input type="radio" name="if_breakdown"  title="否" checked>
+						<input type="radio" name="if_breakdown"  title="是">
 					</div>
 				</div>
 
@@ -136,20 +149,10 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">偏離航道</label>
 					<div class="layui-input-block">
-						<input type="radio" name="偏離航道"  title="否" checked>
-						<input type="radio" name="偏離航道"  title="是">
+						<input type="radio" name="if_off_course"  title="否" checked>
+						<input type="radio" name="if_off_course"  title="是">
 					</div>
 				</div>
-
-
-				<div class="layui-form-item">
-					<label class="layui-form-label">到達</label>
-					<div class="layui-input-block">
-						<input type="radio" name="到達"  title="否" checked>
-						<input type="radio" name="到達"  title="是">
-					</div>
-				</div>
-
 
 
 				<div class="layui-form-item">
@@ -161,14 +164,15 @@
 				</div>
 
 
-
 				<div class="layui-form-item">
-					<label class="layui-form-label">備註</label>
+					<label class="layui-form-label">到達</label>
 					<div class="layui-input-block">
-						<textarea name="desc" class="layui-textarea"></textarea>
+						<input type="radio" name="if_pass_restricted"  title="否" checked>
+						<input type="radio" name="if_pass_restricted"  title="是">
 					</div>
 				</div>
-				
+
+
 
 				<div class="layui-form-item">
 					<div class="layui-input-block">

@@ -35,113 +35,114 @@
 		
 		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
 		<script type="text/javascript" src="../static/framework/frame.js" ></script>
-		
+
 
 	</head>
 
 	<body>
-
-
-
-		  <!-- 左侧菜单 - 开始 -->
-		<div class="frameMenu">
-		    <div class="logo">
-		       <img src="../static/images/logo.png"/>
-		        <div class="logoText">
-		            <h1>飛機調度系統</h1>
-		            <p>取名無能出品</p>
-		        </div>
-		    </div>
-		</div>
-		<!-- 左侧菜单 - 结束 -->
-
-
-
+		
+	
 
 	<div class="main">
 			<!-- 头部栏 - 开始 -->
-			<div class="frameTop">
-				<img class="jt" src="../images/top_jt.png"/>
-				<div class="topMenu">
-					<ul>
-						<li>
-							<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>Back</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-
+			<div class="frameTop"><img class="jt" src="../images/top_jt.png"/></div>
 			<!-- 头部栏 - 结束 -->
 
 
 		<div class="frameMain">
-			<form id="addForm" class="layui-form" action="">
-				
-			
+		
 
-				<div class="layui-form-item">
+		 <form action='/updateaction/' method="post">
+           <table class="layui-table">
+           
+         
+
+            	 <div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  name="aircraft_code" placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
+						<input type="text" name="aircraft_code"  value="{{ i.aircraft_code }}">
 					</div>
 				</div>
-
 
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">濕度</label>
+					<label class="layui-form-label">運營公司</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="humidity" placeholder="50%" autocomplete="off" class="layui-input">
+						<input type="text" name="company" value="{{ i.company }}">
 					</div>
 				</div>
-
-
-
+          
+         		
+         		 <div class="layui-form-item">
+					<label class="layui-form-label">飛機型號</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="aircraft_type" value="{{ i.aircraft_type }}">
+					</div>
+				</div>
 				
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">地形</label>
+					<label class="layui-form-label">出發地</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="landform" placeholder="山地" autocomplete="off" class="layui-input">
+						<input type="text" name="departure_airport" value="{{ i.departure_airport }}">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">目的地</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="arrival_airport" value="{{ i.arrival_airport }}">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">中途地</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="stopover_airport" value="{{ i.stopover_airport }}">
 					</div>
 				</div>
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">氣候</label>
+					<label class="layui-form-label">出發時間</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="weather" placeholder="山地" autocomplete="off" class="layui-input">
+						<input type="text" name="departure_time" value="{{ i.departure_time}}">
 					</div>
 				</div>
 
-				
-				
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">風級</label>
+					<label class="layui-form-label">到達時間</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="wind_scale" placeholder="4" autocomplete="off" class="layui-input">
+						<input type="text" name="arrival_time" value="{{ i.arrival_time}}">
 					</div>
 				</div>
+
+
+
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">風向</label>
+					<label class="layui-form-label">宽度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="wind_direction" placeholder="132" autocomplete="off" class="layui-input">
+						<input type="text" name="flight_weight" value="{{ i.flight_weight}}">
 					</div>
 				</div>
 
-				
+          
 
-				<div class="layui-form-item">
-					<div class="layui-input-block">
-						<button class="layui-btn" lay-submit lay-filter="submitBut">Submit</button>
-						<button type="reset" class="layui-btn layui-btn-primary">Reset</button>
-					</div>
-				</div>
-			</form>
+            <tr>
+                <td colspan="2" align="center"><input type="Submit" ,value="Submit"></td>
+            </tr>
+
+        </table>
+    </form>
+
+
+
 			
 			
+
 
 		</div>
 		</div>

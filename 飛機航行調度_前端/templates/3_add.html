@@ -80,7 +80,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">機場名</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="TPE" autocomplete="off" class="layui-input">
+						<input type="text" name="aircraft_code" placeholder="TPE" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
@@ -88,25 +88,35 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">狀態</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="空閒" required lay-verify="required" autocomplete="off" class="layui-input">
+						<input type="text"  name="situation" placeholder="空閒" required lay-verify="required" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">空餘跑到數</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  placeholder="20" autocomplete="off" class="layui-input">
+						<input type="text" name="runway" placeholder="25" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
-				
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">備註</label>
-					<div class="layui-input-block">
-						<textarea name="desc" class="layui-textarea"></textarea>
+					<label class="layui-form-label">順序</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="sequence" placeholder="1" autocomplete="off" class="layui-input">
 					</div>
 				</div>
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">等待時間</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="wait_time" placeholder="22" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+
+				
 				
 
 				<div class="layui-form-item">
