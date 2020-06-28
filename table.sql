@@ -48,8 +48,9 @@ CREATE TABLE aircraft_condition(
 );
 
 CREATE TABLE aircraft_performance(
-	aircraft_type VARCHAR PRIMARY KEY NOT NULL,
+	aircraft_type VARCHAR NOT NULL,
 	max_attitude INTEGER NOT NULL,
+	CONSTRAINT condition_key PRIMARY KEY (aircraft_type,max_attitude),
 	max_fuel_load INTEGER,
 	cruise INTEGER NOT NULL,
 	climb_rate INTEGER NOT NULL,
