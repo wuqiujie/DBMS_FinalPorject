@@ -28,7 +28,7 @@ CREATE TABLE environment(
 	weather VARCHAR NOT NULL,
 	wind_scale INTEGER NOT NULL,
 	wind_direction VARCHAR NOT NULL,
-	CONSTRAINT environment_key PRIMARY KEY (aircraft_code,humidity,landform,weather,wind_scale,wind_direction)
+	CONSTRAINT environment_key PRIMARY KEY (aircraft_code,humidity,weather,wind_scale)
 );
 
 CREATE TABLE aircraft_condition(
