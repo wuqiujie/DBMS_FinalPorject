@@ -53,16 +53,15 @@
 		     <div class="menu">
 		        <ul>
 		        	<li>
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-biaodanwancheng left"></i>航班信息<i class="iconfont icon-dajiantouyou right"></i></a>
+		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yingyongzhongxin left"></i>飛機當前狀況<i class="iconfont icon-dajiantouyou right"></i></a>
 		        		 <dl>
-		               		 <dt> <a href="1_add.html">添加</a></dt>
- 							 <dt> <a href="1_list.html">修改</a></dt>
- 							  <dt> <a href="1_search.html">搜尋</a></dt>
+		               		 <dt> <a href="5_add.html">添加</a></dt>
+ 							 <dt> <a href="5_list.html">修改</a></dt>
+ 							  <dt> <a href="5_search.html">搜尋</a></dt>
 
 		                </dl>
 		            </li>
-		       
-		            <li>
+		         <li>
 		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
 		           	</li>
 		        </ul>
@@ -88,14 +87,17 @@
 				<thead>
 					<tr>
 						<th>航班號</th>
-						<th>運營公司</th>
-						<th>飛機型號</th>
-						<th>出發地</th>
-						<th>目的地</th>
-						<th>中途地</th>
-						<th>出發時間</th>
-						<th>到達時間</th>
-						<th>宽度</th>
+						<th>經度</th>
+						<th>緯度</th>
+						<th>飛行高度</th>
+						<th>航向</th>
+						<th>剩餘油量</th>
+						<th>時間</th>
+						<th>里程</th>
+						<th>故障</th>
+						<th>偏離航道</th>
+						<th>飛過禁區</th>
+						<th>到達</th>
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -112,8 +114,8 @@
 						<td>{{ i[7] }}</td>
 						<td>{{ i[8]  }}</td>
 						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/1_update?id={{ i[0] }}">修改</a></button>
-							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/1_delete?id={{ i[0]}}">删除</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/5_update?id={{ i[0] }}">修改</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/5_delete?id={{ i[0]}}">删除</a></button>
 
 						</td>
 					</tr>
@@ -141,7 +143,7 @@
 							area: ['70%', '80%'],
 							scrollbar: true,	
 							maxmin: true,
-							content: '1_update.html'
+							content: '5_update.html'
 						});
 					});
 					

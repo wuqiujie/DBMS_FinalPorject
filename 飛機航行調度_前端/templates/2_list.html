@@ -41,7 +41,8 @@
 
 	<body>
 		
-		  <!-- 左侧菜单 - 开始 -->
+		 
+		 <!-- 左侧菜单 - 开始 -->
 		<div class="frameMenu">
 		    <div class="logo">
 		       <img src="../static/images/logo.png"/>
@@ -53,16 +54,15 @@
 		     <div class="menu">
 		        <ul>
 		        	<li>
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-biaodanwancheng left"></i>航班信息<i class="iconfont icon-dajiantouyou right"></i></a>
+		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-huojian left"></i>飛機性能<i class="iconfont icon-dajiantouyou right"></i></a>
 		        		 <dl>
-		               		 <dt> <a href="1_add.html">添加</a></dt>
- 							 <dt> <a href="1_list.html">修改</a></dt>
- 							  <dt> <a href="1_search.html">搜尋</a></dt>
+		               		 <dt> <a href="2_add.html">添加</a></dt>
+ 							 <dt> <a href="2_list.html">修改</a></dt>
+ 							  <dt> <a href="2_search.html">搜尋</a></dt>
 
 		                </dl>
 		            </li>
-		       
-		            <li>
+		        <li>
 		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
 		           	</li>
 		        </ul>
@@ -87,15 +87,17 @@
 			<table class="layui-table">
 				<thead>
 					<tr>
-						<th>航班號</th>
-						<th>運營公司</th>
 						<th>飛機型號</th>
-						<th>出發地</th>
-						<th>目的地</th>
-						<th>中途地</th>
-						<th>出發時間</th>
-						<th>到達時間</th>
-						<th>宽度</th>
+						<th>最大高度</th>
+						<th>最大油量</th>
+						<th>巡航</th>
+						<th>爬升率</th>
+						<th>續航時間</th>
+						<th>最大速度</th>
+						<th>最小速度</th>
+						<th>起飛距離</th>
+						<th>降落距離</th>
+						<th>安全距離</th>
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -111,22 +113,24 @@
 						<td>{{ i[6]  }}</td>
 						<td>{{ i[7] }}</td>
 						<td>{{ i[8]  }}</td>
+						<td>{{ i[9]  }}</td>
+						<td>{{ i[10]  }}</td>
 						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/1_update?id={{ i[0] }}">修改</a></button>
-							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/1_delete?id={{ i[0]}}">删除</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/2_update?id={{ i[0] }}">修改</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/2_delete?id={{ i[0]}}">删除</a></button>
 
 						</td>
 					</tr>
 				{% endfor %}
 				</tbody>
-			
+				
+
 
 			</table>
 			
-		
+			
 			<script>
-
-
+				
 
 			//修改按钮
 				var updateFrame = null;
@@ -141,7 +145,7 @@
 							area: ['70%', '80%'],
 							scrollbar: true,	
 							maxmin: true,
-							content: '1_update.html'
+							content: '2_update.html'
 						});
 					});
 					

@@ -17,7 +17,6 @@
 		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
 		<title>後台</title>
 
-
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="../static/images/favicon.ico"/>
 		<link rel="bookmark" href="../static/images/favicon.ico"/>
@@ -36,106 +35,136 @@
 		
 		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
 		<script type="text/javascript" src="../static/framework/frame.js" ></script>
-		
+
+
 	</head>
 
 	<body>
-		<!-- 左侧菜单 - 开始 -->
+		
+		  <!-- 左侧菜单 - 开始 -->
 		<div class="frameMenu">
 		    <div class="logo">
-		        <img src="../static/images/logo.png"/>
+		       <img src="../static/images/logo.png"/>
 		        <div class="logoText">
 		            <h1>飛機調度系統</h1>
 		            <p>取名無能出品</p>
 		        </div>
 		    </div>
-
-		    <div class="menu">
+		     <div class="menu">
 		        <ul>
 		        	<li>
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-biaodanwancheng left"></i>航班信息<i class="iconfont icon-dajiantouyou right"></i></a>
-		        		 <dl>
-		               		 <dt> <a href="1_add.html">添加</a></dt>
- 							 <dt> <a href="1_list.html">修改/删除</a></dt>
- 							 <dt> <a href="1_search.html">搜尋</a></dt>
-
-		                </dl>
-		            </li>
-
-		        	<li>
-		        		 <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-huojian left"></i>飛機性能<i class="iconfont icon-dajiantouyou right"></i></a>
- 						<dl>
-		               		 <dt> <a href="2_add.html">添加</a></dt>
- 							 <dt> <a href="2_list.html">修改/删除</a></dt>
- 							 <dt> <a href="2_search.html">搜尋</a></dt>
-		                </dl>	
-		            </li>
-
-		        	<li>
-
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yunying left"></i>機場信息<i class="iconfont icon-dajiantouyou right"></i></a>
-
-		                 <dl>
-		               		 <dt> <a href="3_add.html">添加</a></dt>
- 							 <dt> <a href="3_list.html">修改/删除</a></dt>
- 							 <dt> <a href="3_search.html">搜尋</a></dt>
-		                </dl>
-		           	</li>
-
-
-		        	<li>
 		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-peisong2 left"></i>周圍環境<i class="iconfont icon-dajiantouyou right"></i></a>
-
-		                 <dl>
+		        		 <dl>
 		               		 <dt> <a href="4_add.html">添加</a></dt>
- 							 <dt> <a href="4_list.html">修改/删除</a></dt>
- 							 <dt> <a href="4_search.html">搜尋</a></dt>
+ 							 <dt> <a href="4_list.html">修改</a></dt>
+ 							  <dt> <a href="4_search.html">搜尋</a></dt>
+
 		                </dl>
+		            </li>
+		        <li>
+		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
 		           	</li>
-
-
-		        	<li>
-
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yingyongzhongxin left"></i>飛機當前狀況<i class="iconfont icon-dajiantouyou right"></i></a>
-
-		                 <dl>
-		               		 <dt> <a href="5_add.html">添加</a></dt>
- 							 <dt> <a href="5_list.html">修改/删除</a></dt>
- 							 <dt> <a href="5_search.html">搜尋</a></dt>
-		                </dl>
-		         
-		           	</li>
-
-
-		           	<li>
-		         		<a href="search.html"><i class="iconfont icon-survey left"></i>搜索</a>
-		           	</li>
-
-
 		        </ul>
 		    </div>
 		</div>
 		<!-- 左侧菜单 - 结束 -->
-		
-		<div class="main">
+
+
+	<div class="main">
 			<!-- 头部栏 - 开始 -->
 			<div class="frameTop">
-				<img class="jt" src="../static/images/top_jt.png"/>
-				<div class="topMenu">
-					<ul>
-						<li><a href="login1.html"><i class="iconfont icon-084tuichu"></i>Logout</a></li>
-					</ul>
-				</div>
+				<img class="jt" src="../images/top_jt.png"/>
 			</div>
+
+
 			<!-- 头部栏 - 结束 -->
-			
-			<!-- 核心区域 - 开始 -->
-			<div class="frameMain">
-				<div class="title" id="frameMainTitle">
-					<span><i class="iconfont icon-xianshiqi"></i>後台首頁</span>
+
+		<div class="frameMain">
+			<div class="title" id="frameMainTitle">
+					<span><i class="iconfont icon-xianshiqi"></i>周圍環境</span>
 				</div>
-			</div>
-			<!-- 核心区域 - 结束 -->
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>航班號</th>
+						<th>濕度</th>
+						<th>地形</th>
+						<th>氣候</th>
+						<th>風級</th>
+						<th>風向</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i in userlist %}
+					<tr>
+						<td>{{ i[0]  }}</td>
+						<td>{{ i[1]  }}</td>
+						<td>{{ i[2]  }}</td>
+						<td>{{ i[3]  }}</td>
+						<td>{{ i[4]  }}</td>
+						<td>{{ i[5]  }}</td>
+						<td>
+							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/4_update?id={{ i[0] }}">修改</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/4_delete?id={{ i[0]}}">删除</a></button>
+
+						</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			
+
+			</table>
+			
+		
+			<script>
+
+
+
+			//修改按钮
+				var updateFrame = null;
+				function updateList(){
+					layui.use('layer', function() {
+						var layer = layui.layer;
+							
+						//iframe层-父子操作
+						updateFrame = layer.open({
+                    		title: "修改",
+							type: 2,
+							area: ['70%', '80%'],
+							scrollbar: true,	
+							maxmin: true,
+							content: '4_update.html'
+						});
+					});
+					
+				}
+
+
+				//删除
+			function delList(_this){
+				layui.use(['form','laydate'], function() {
+					layer.confirm('確定要刪除嗎？', {
+						btn: ['Yes', 'No'] //按钮
+					}, function() {
+						$(_this).parent().parent().remove();
+						layer.msg('刪除成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.msg('刪除取消', {
+							time: 2000 //20s后自动关闭
+						});
+					});
+				});
+
+
+
+
+			}
+
+
+			</script>
 		</div>
 	</body>
 
