@@ -113,6 +113,9 @@
 						<td>{{ i[6]  }}</td>
 						<td>{{ i[7] }}</td>
 						<td>{{ i[8]  }}</td>
+						<td>{{ i[9]  }}</td>
+						<td>{{ i[10]  }}</td>
+						<td>{{ i[11]  }}</td>
 						<td>
 							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/5_update?id={{ i[0] }}">修改</a></button>
 							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/5_delete?id={{ i[0]}}">删除</a></button>
@@ -126,7 +129,14 @@
 			</table>
 			
 		
+			<!-- layUI 分页模块 -->
+			<div id="pages"></div>
 			<script>
+				layui.use(['laypage', 'layer'], function() {
+					var laypage = layui.laypage,
+						layer = layui.layer;
+				});
+
 
 
 
@@ -141,7 +151,7 @@
                     		title: "修改",
 							type: 2,
 							area: ['70%', '80%'],
-							scrollbar: true,	
+							scrollbar: false,	
 							maxmin: true,
 							content: '5_update.html'
 						});

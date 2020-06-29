@@ -92,8 +92,7 @@
 						<th>狀態</th>
 						<th>空餘跑到數</th>
 						<th>順序</th>
-						<th>等待時間</th>
-						
+						<th>等待時間</th>	
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -107,8 +106,8 @@
 						<td>{{ i[4]  }}</td>
 						<td>{{ i[5]  }}</td>
 						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/3_update?id={{ i[0] }}">修改</a></button>
-							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/3_delete?id={{ i[0]}}">删除</a></button>
+							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/3_update?id={{ i[0] }}id={{ i[1] }}"></a>修改</button>
+							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/3_delete?id={{ i[0]}}id={{ i[1] }}"></a><a href="/3_delete?id={{ i[1]}}">删除</a></button>
 
 						</td>
 					</tr>
@@ -120,8 +119,15 @@
 			</table>
 			
 			
+			<!-- layUI 分页模块 -->
+			<div id="pages"></div>
 			<script>
-				
+				layui.use(['laypage', 'layer'], function() {
+					var laypage = layui.laypage,
+						layer = layui.layer;
+					
+				});
+
 
 			//修改按钮
 				var updateFrame = null;

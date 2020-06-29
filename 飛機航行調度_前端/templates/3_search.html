@@ -16,7 +16,7 @@
 		<!-- 网站简介 -->
 		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
 		<title>後台</title>
-		
+
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="../static/images/favicon.ico"/>
 		<link rel="bookmark" href="../static/images/favicon.ico"/>
@@ -35,131 +35,81 @@
 		
 		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
 		<script type="text/javascript" src="../static/framework/frame.js" ></script>
-		
+
 
 	</head>
 
 	<body>
-      
-      <!-- 左侧菜单 - 开始 -->
+		
+		<!-- 左侧菜单 - 开始 -->
 		<div class="frameMenu">
 		    <div class="logo">
-		        <img src="../static/images/logo.png"/>
+		       <img src="../static/images/logo.png"/>
 		        <div class="logoText">
 		            <h1>飛機調度系統</h1>
 		            <p>取名無能出品</p>
 		        </div>
 		    </div>
+		     <div class="menu">
+		        <ul>
+		        	<li>
+		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yunying left"></i>機場信息<i class="iconfont icon-dajiantouyou right"></i></a>
+		        		 <dl>
+		               		 <dt> <a href="3_add.html">添加</a></dt>
+ 							 <dt> <a href="3_list.html">修改</a></dt>
+ 							  <dt> <a href="3_search.html">搜尋</a></dt>
+
+		                </dl>
+		            </li>
+		        <li>
+		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
+		           	</li>
+		        </ul>
+		    </div>
 		</div>
 		<!-- 左侧菜单 - 结束 -->
 
 
-		<div class="main">
+
+	<div class="main">
 			<!-- 头部栏 - 开始 -->
 			<div class="frameTop">
 				<img class="jt" src="../images/top_jt.png"/>
 				<div class="topMenu">
 					<ul>
 						<li>
-							<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>Back</a>
+							<a href="3_list.html">Result<i class="iconfont icon-duigou"></i></a>
 						</li>
 					</ul>
 				</div>
 			</div>
-
-
 			<!-- 头部栏 - 结束 -->
-			
-			
-		
-
 
 
 		<div class="frameMain">
+			<div class="title" id="frameMainTitle">
+					<span><i class="iconfont icon-xianshiqi"></i>機場信息</span>
+			</div>
+			
 			<div class="console">
-				<form class="layui-form" action="">
+
+				<form class="layui-form" action="/3_searchaction/" method="post">
 					<div class="layui-form-item">
 						<div class="layui-input-inline">
-							<input type="text" name="航班號"  placeholder="航班號" autocomplete="off" class="layui-input">
+							<input type="text" name="name"  placeholder="航班號" autocomplete="off" class="layui-input">
 						</div>
-
-						<div class="layui-input-inline">
-							<input type="text" name="機場名"  placeholder="機場名" autocomplete="off" class="layui-input">
-						</div>
-
-						<div class="layui-input-inline">
-							<input type="text" name="飛機型號"  placeholder="飛機型號" autocomplete="off" class="layui-input">
-						</div>
-
-						
-						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
+						<button class="layui-btn" lay-submit lay-filter="formDemo" type="submit" class="search-submit">搜索</button>
 					</div>
 				</form>
 
+			
+
 				
-			</div>
-			
-			<table class="layui-table">
-				<thead>
-					<tr>
-						<th>航班號</th>
-						<th>飛機型號</th>
-						<th>出發地</th>
-						<th>目的地</th>						
-						
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>AE211</td>
-						<td>波音737</td>
-						<td>TPE</td>
-						<td>FOC</td>
-					</tr>
-					<tr>
-						<td>MF200</td>
-						<td>波音737</td>
-						<td>TPE</td>
-						<td>NY</td>
-					</tr>
-					<tr>
-						<td>DB100</td>
-						<td>波音737</td>
-						<td>TPE</td>
-						<td>LA</td>
-					</tr>
-
-				</tbody>
-			</table>
+		     </div>
 			
 			
-
-		</div>
-		
-		
-
-</div>
-		<script>
-					layui.use(['form','laydate'], function() {
-						var form = layui.form;
-						var laydate = layui.laydate;
-				
-						//监听提交
-						form.on('submit(formDemo)', function(data) {
-							layer.msg(JSON.stringify(data.field));
-							return false;
-						});
-						
-						var newDate = new Date();
-						nowTime = newDate.getFullYear()+"-"+(newDate.getMonth()+1)+"-"+newDate.getDate();
-						laydate.render({
-						    elem: '#time' 
-					    	,range: '~'
-					    	,format: 'yyyy-MM-dd'
-					    	,max: nowTime	//min/max - 最小/大范围内的日期时间值
-						});
-					});
-				</script>
-	</body>
+	     </div>
+	</div>
+</body>
 
 </html>

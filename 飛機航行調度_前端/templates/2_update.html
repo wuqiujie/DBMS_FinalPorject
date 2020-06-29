@@ -35,111 +35,106 @@
 		
 		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
 		<script type="text/javascript" src="../static/framework/frame.js" ></script>
-		
+
 
 	</head>
 
 	<body>
-
-
-
-		 <!-- 左侧菜单 - 开始 -->
-		<div class="frameMenu">
-		    <div class="logo">
-		       <img src="../static/images/logo.png"/>
-		        <div class="logoText">
-		            <h1>飛機調度系統</h1>
-		            <p>取名無能出品</p>
-		        </div>
-		    </div>
-		     <div class="menu">
-		        <ul>
-		        	<li>
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-peisong2 left"></i>周圍環境<i class="iconfont icon-dajiantouyou right"></i></a>
-		        		 <dl>
-		               		 <dt> <a href="4_add.html">添加</a></dt>
- 							 <dt> <a href="4_list.html">修改</a></dt>
- 							  <dt> <a href="4_search.html">搜尋</a></dt>
-
-		                </dl>
-		            </li>
-		        <li>
-		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
-		           	</li>
-		        </ul>
-		    </div>
-		</div>
-		<!-- 左侧菜单 - 结束 -->
+		
 
 
 	<div class="main">
-			<!-- 头部栏 - 开始 -->
-			<div class="frameTop">
-				<img class="jt" src="../images/top_jt.png"/>
+			
+		<div class="frameMain">
+			<div class="title" id="frameMainTitle">
+					<span><i class="iconfont icon-xianshiqi"></i>飛機性能</span>
 			</div>
 
+		 <form action='/2_updateaction/' method="post">
+       
+           {% for i in userlist %}
+         <div class="layui-form-item">
+					<label class="layui-form-label">飛機型號</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"    name="aircraft_type"  placeholder="A737"  readonly="readonly" autocomplete="off" class="layui-input" value="{{ i[0] }}">
+					</div>
+				</div>
 
-			<!-- 头部栏 - 结束 -->
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">最大高度</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="max_attitude"  placeholder="12" autocomplete="off" class="layui-input" value="{{ i[1] }}">
+					</div>
+				</div>
 
 
+				<div class="layui-form-item">
+					<label class="layui-form-label">最大油量</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="max_fuel_load" placeholder="5"   autocomplete="off" class="layui-input" value="{{ i[2] }}">
+					</div>
+				</div>
 
-		<div class="frameMain">
-			<form id="addForm" class="layui-form" action='/4_addaction/'>
+				<div class="layui-form-item">
+					<label class="layui-form-label">巡航</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="cruise" placeholder="900" autocomplete="off" class="layui-input" value="{{ i[3] }}">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">爬升率</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text"  name="climb_rate" placeholder="1500" autocomplete="off" class="layui-input" value="{{ i[4] }}">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">續航時間</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="flight_duration" placeholder="8" autocomplete="off" class="layui-input" value="{{ i[5] }}">
+					</div>
+				</div>
 				
-			
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">航班號</label>
+					<label class="layui-form-label">最大速度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  name="aircraft_code" placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-
-
-
-				<div class="layui-form-item">
-					<label class="layui-form-label">濕度</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="humidity" placeholder="50%" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-
-
-
-				
-
-				<div class="layui-form-item">
-					<label class="layui-form-label">地形</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="landform" placeholder="山地" autocomplete="off" class="layui-input">
+						<input type="text" name="max_speed" placeholder="1900" autocomplete="off" class="layui-input" value="{{ i[6] }}">
 					</div>
 				</div>
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">氣候</label>
+					<label class="layui-form-label">最小速度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="weather" placeholder="sunny" autocomplete="off" class="layui-input">
+						<input type="text" name="min_speed" placeholder="0" autocomplete="off" class="layui-input" value="{{ i[7] }}">
 					</div>
 				</div>
 
-				
-				
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">風級</label>
+					<label class="layui-form-label">起飛距離</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="wind_scale" placeholder="4" autocomplete="off" class="layui-input">
+						<input type="text" name="takeoff_distance" placeholder="1000" autocomplete="off" class="layui-input" value="{{ i[8] }}">
 					</div>
 				</div>
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">風向</label>
+					<label class="layui-form-label">降落距離</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="wind_direction" placeholder="132" autocomplete="off" class="layui-input">
+						<input type="text" name="landing_distance" placeholder="1500" autocomplete="off" class="layui-input" value="{{ i[9] }}">
 					</div>
 				</div>
 
-				
+				<div class="layui-form-item">
+					<label class="layui-form-label">安全距離</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="safe_disdance" placeholder="10" autocomplete="off" class="layui-input" value="{{ i[10] }}">
+					</div>
+				</div>
+
+				{% endfor %}
 
 				<div class="layui-form-item">
 					<div class="layui-input-block">
@@ -147,9 +142,13 @@
 						<button type="reset" class="layui-btn layui-btn-primary">Reset</button>
 					</div>
 				</div>
-			</form>
+    </form>
+
+
+
 			
 			
+
 
 		</div>
 		</div>

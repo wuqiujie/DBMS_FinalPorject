@@ -35,61 +35,28 @@
 		
 		<link rel="stylesheet" type="text/css" href="../static/css/frameStyle.css">
 		<script type="text/javascript" src="../static/framework/frame.js" ></script>
-		
+
 
 	</head>
 
 	<body>
-
-     <!-- 左侧菜单 - 开始 -->
-		<div class="frameMenu">
-		    <div class="logo">
-		       <img src="../static/images/logo.png"/>
-		        <div class="logoText">
-		            <h1>飛機調度系統</h1>
-		            <p>取名無能出品</p>
-		        </div>
-		    </div>
-		     <div class="menu">
-		        <ul>
-		        	<li>
-		        		<a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yingyongzhongxin left"></i>飛機當前狀況<i class="iconfont icon-dajiantouyou right"></i></a>
-		        		 <dl>
-		               		 <dt> <a href="5_add.html">添加</a></dt>
- 							 <dt> <a href="5_list.html">修改</a></dt>
- 							  <dt> <a href="5_search.html">搜尋</a></dt>
-
-		                </dl>
-		            </li>
-		         <li>
-		         		<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>返回主菜單</a>
-		           	</li>
-		        </ul>
-		    </div>
-		</div>
-		<!-- 左侧菜单 - 结束 -->
+		
 
 
 	<div class="main">
-			<!-- 头部栏 - 开始 -->
-			<div class="frameTop">
-				<img class="jt" src="../images/top_jt.png"/>
+			
+		<div class="frameMain">
+			<div class="title" id="frameMainTitle">
+					<span><i class="iconfont icon-xianshiqi"></i>航班信息</span>
 			</div>
 
-
-			<!-- 头部栏 - 结束 -->
-
-			
-
-
-
-		<div class="frameMain">
-			<form id="addForm" class="layui-form" action='/5_addaction/'>
-				
-				<div class="layui-form-item">
+		 <form action='/5_updateaction/' method="post">
+       
+           {% for i in userlist %}
+         <div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text"  name="aircraft_code" placeholder="DB520"  required lay-verify="required" autocomplete="off" class="layui-input">
+						<input type="text"   name ="aircraft_code" readonly="readonly" placeholder="DB520"   autocomplete="off" class="layui-input" value="{{ i[0] }}">
 					</div>
 				</div>
 
@@ -97,7 +64,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">經度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="longtitude" placeholder="25" autocomplete="off" class="layui-input">
+						<input type="text" name="longtitude" placeholder="25" autocomplete="off" class="layui-input" value="{{ i[1] }}">
 					</div>
 				</div>
 
@@ -105,85 +72,76 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">緯度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="latitude" placeholder="121" autocomplete="off" class="layui-input">
+						<input type="text" name="latitude" placeholder="121" autocomplete="off" class="layui-input" value="{{ i[2] }}">
 					</div>
 				</div>
-
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">飛行高度</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="flight_attitude" placeholder="22000" autocomplete="off" class="layui-input">
+						<input type="text" name="flight_attitude" placeholder="22000" autocomplete="off" class="layui-input" value="{{ i[3] }}">
 					</div>
 				</div>
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">航向</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="flight_direction" placeholder="100" autocomplete="off" class="layui-input">
+						<input type="text" name="flight_direction" placeholder="100" autocomplete="off" class="layui-input" value="{{ i[4] }}">
 					</div>
 				</div>
-				
-
-				
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">剩餘油量</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="oil_remaining" placeholder="13" autocomplete="off" class="layui-input">
+						<input type="text"  name="oil_remaining" placeholder="13" autocomplete="off" class="layui-input" value="{{ i[5] }}">
 					</div>
 				</div>
-
+				
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">時間</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="time_flown" placeholder="19:44" autocomplete="off" class="layui-input">
+						<input type="text" name="time_flown" placeholder="19:44" autocomplete="off" class="layui-input" value="{{ i[6] }}">
 					</div>
 				</div>
 
-
-			    <div class="layui-form-item">
+				<div class="layui-form-item">
 					<label class="layui-form-label">里程</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="mile_flown" placeholder="28000" autocomplete="off" class="layui-input">
+						<input type="text" name="mile_flown" placeholder="28000" autocomplete="off" class="layui-input" value="{{ i[7] }}">
 					</div>
 				</div>
 
-				
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">故障</label>
 					<div class="layui-input-inline shortInput">
-							<input type="text" name="if_breakdown" placeholder="FALSE" autocomplete="off" class="layui-input">
+						<input type="text" name="if_breakdown" placeholder="FALSE" autocomplete="off" class="layui-input" value="{{ i[8] }}">
 					</div>
 				</div>
-
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">偏離航道</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="if_off_course" placeholder="FALSE" autocomplete="off" class="layui-input">
+						<input type="text" name="if_off_course" placeholder="FALSE" autocomplete="off" class="layui-input" value="{{ i[9] }}">
 					</div>
 				</div>
-
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">飛過禁區</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="if_pass_restricted" placeholder="FALSE" autocomplete="off" class="layui-input">
+						<input type="text" name="if_pass_restricted" placeholder="FALSE" autocomplete="off" class="layui-input" value="{{ i[10] }}">
 					</div>
 				</div>
-
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">到達</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="if_arrival" placeholder="FALSE" autocomplete="off" class="layui-input">
+						<input type="text" name="if_arrival" placeholder="FALSE" autocomplete="off" class="layui-input" value="{{ i[11] }}">
 					</div>
 				</div>
 
-
+				{% endfor %}
 
 				<div class="layui-form-item">
 					<div class="layui-input-block">
@@ -191,9 +149,13 @@
 						<button type="reset" class="layui-btn layui-btn-primary">Reset</button>
 					</div>
 				</div>
-			</form>
+    </form>
+
+
+
 			
 			
+
 
 		</div>
 		</div>
