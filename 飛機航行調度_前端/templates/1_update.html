@@ -44,15 +44,14 @@
 	
 
 	<div class="main">
+			
 			<!-- 头部栏 - 开始 -->
 			<div class="frameTop"><img class="jt" src="../images/top_jt.png"/></div>
 			<!-- 头部栏 - 结束 -->
 
 
 		<div class="frameMain">
-		
-
-		 <form action='/updateaction/' method="post">
+		 <form action='/1_updateaction/' method="post">
            <table class="layui-table">
            
          {% for i in userlist %}
@@ -60,7 +59,7 @@
             	 <div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="aircraft_code"  value="{{ i.aircraft_code }}">
+						<input type="text" name="aircraft_code"  readonly="readonly" value="{{ i.aircraft_code }}">
 					</div>
 				</div>
 

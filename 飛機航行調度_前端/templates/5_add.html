@@ -76,7 +76,7 @@
 
 
 		<div class="frameMain">
-			<form id="addForm" class="layui-form" action="">
+			<form id="addForm" class="layui-form" action='/5_addaction/'>
 				
 				<div class="layui-form-item">
 					<label class="layui-form-label">航班號</label>
@@ -106,6 +106,13 @@
 					<label class="layui-form-label">飛行高度</label>
 					<div class="layui-input-inline shortInput">
 						<input type="text" name="flight_attitude" placeholder="22000" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">航向</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="flight_direction" placeholder="100" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 				
@@ -140,8 +147,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">故障</label>
 					<div class="layui-input-block">
-						<input type="radio" name="if_breakdown"  title="否" checked>
-						<input type="radio" name="if_breakdown"  title="是">
+						<input type="radio" name="if_breakdown"  title="FALSE" checked>
+						<input type="radio" name="if_breakdown"  title="TRUE">
 					</div>
 				</div>
 
@@ -149,8 +156,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">偏離航道</label>
 					<div class="layui-input-block">
-						<input type="radio" name="if_off_course"  title="否" checked>
-						<input type="radio" name="if_off_course"  title="是">
+						<input type="radio" name="if_off_course"  title="FALSE" checked>
+						<input type="radio" name="if_off_course"  title="TRUE">
 					</div>
 				</div>
 
@@ -158,8 +165,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">飛過禁區</label>
 					<div class="layui-input-block">
-						<input type="radio" name="飛過禁區"  title="否" checked>
-						<input type="radio" name="飛過禁區"  title="是">
+						<input type="radio" name="飛過禁區"  title="FALSE" checked>
+						<input type="radio" name="飛過禁區"  title="TRUE">
 					</div>
 				</div>
 
@@ -167,8 +174,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">到達</label>
 					<div class="layui-input-block">
-						<input type="radio" name="if_pass_restricted"  title="否" checked>
-						<input type="radio" name="if_pass_restricted"  title="是">
+						<input type="radio" name="if_pass_restricted"  title="FALSE" checked>
+						<input type="radio" name="if_pass_restricted"  title="TRUE">
 					</div>
 				</div>
 

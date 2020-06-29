@@ -65,119 +65,51 @@
 						<li>
 							<a href="frame.html"><i class="iconfont icon-dajiantouzuo"></i>Back</a>
 						</li>
+						<li>
+							<a href="1_list.html">Result<i class="iconfont icon-dajiantouyou"></i></a>
+						</li>
 					</ul>
 				</div>
 			</div>
-
-
 			<!-- 头部栏 - 结束 -->
 
 
 		<div class="frameMain">
-			
-			<table class="layui-table">
-				<thead>
-					<tr>
-						<th>航班號</th>
-						<th>運營公司</th>
-						<th>飛機型號</th>
-						<th>出發地</th>
-						<th>目的地</th>
-						<th>中途地</th>
-						<th>出發時間</th>
-						<th>到達時間</th>
-						<th>宽度</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for i in userlist %}
-					<tr>
-						<td>{{ i.aircraft_code }}</td>
-						<td>{{ i.company }}</td>
-						<td>{{ i.aircraft_type }}</td>
-						<td>{{ i.departure_airport }}</td>
-						<td>{{ i.arrival_airport }}</td>
-						<td>{{ i.stopover_airport }}</td>
-						<td>{{ i.departure_time }}</td>
-						<td>{{ i.arrival_time }}</td>
-						<td>{{ i.flight_weight }}</td>
-						<td>
-							<button class="layui-btn layui-btn-xs" onclick="updateList()"><a href="/1_update?id={{ i.aircraft_code }}">修改</button>
-							<button class="layui-btn layui-btn-xs" onclick="delList(this)"><a href="/1_delete?id={{ i.aircraft_code }}">删除</button>
+			<div class="console">
 
-						</td>
-					</tr>
-				{% endfor %}
+				<form class="layui-form" action="/1_searchaction/" method="post">
+					<div class="layui-form-item">
+						<div class="layui-input-inline">
+							<input type="text" name="aircraft_code" required lay-verify="required" placeholder="航班號" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="departure_airport"  placeholder="出發地" autocomplete="off" class="layui-input">
+						</div>
 
-				</tbody>
-			</table>
-			
-			<!-- layUI 分页模块 -->
-			<div id="pages"></div>
-			<script>
-				layui.use(['laypage', 'layer'], function() {
-					var laypage = layui.laypage,
-						layer = layui.layer;
+						<div class="layui-input-inline">
+							<input type="text" name="arrival_airport"  placeholder="目的地" autocomplete="off" class="layui-input">
+						</div>
+
+						<button class="layui-btn" lay-submit lay-filter="formDemo" type="submit" class="search-submit">搜索</button>
+					</div>
+				</form>
+
+				<script>
+					layui.use('form', function() {
+						var form = layui.form;
 				
-					//总页数大于页码总数
-					laypage.render({
-					    elem: 'pages'
-					    ,count: 100
-					    ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
-					    ,jump: function(obj){
-					      console.log(obj)
-					    }
-					});
-				});
-
-
-
-			//修改按钮
-				var updateFrame = null;
-				function updateList(){
-					layui.use('layer', function() {
-						var layer = layui.layer;
-							
-						//iframe层-父子操作
-						updateFrame = layer.open({
-                    		title: "修改",
-							type: 2,
-							area: ['70%', '80%'],
-							scrollbar: true,	
-							maxmin: true,
-							content: '1_update.html'
+						//监听提交
+						form.on('submit(formDemo)', function(data) {
+							layer.msg(JSON.stringify(data.field));
+							return false;
 						});
 					});
-					
-				}
-
-
-				//删除
-			function delList(_this){
-				layui.use(['form','laydate'], function() {
-					layer.confirm('確定要刪除嗎？', {
-						btn: ['Yes', 'No'] //按钮
-					}, function() {
-						$(_this).parent().parent().remove();
-						layer.msg('刪除成功', {
-							icon: 1
-						});
-					}, function() {
-						layer.msg('刪除取消', {
-							time: 2000 //20s后自动关闭
-						});
-					});
-				});
-
-
-
-
-			}
-
-
-			</script>
-		</div>
+				</script>
+		     </div>
+			
+			
+	     </div>
+	     </div>
 	</body>
 
 </html>
